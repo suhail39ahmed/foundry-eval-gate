@@ -1,49 +1,60 @@
 # foundry-eval-gate
 
-CLI `eval-gate`: run **faithfulness**, **tool_success**, and **pii_leak** checks on sample agent traces. Exits **non-zero** on failure and writes `reports/report.html`.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![Status](https://img.shields.io/badge/status-0.1.0%20MVP-green.svg)
 
-## What it is
-- Fixture-mode eval gate for AI app CI
-- CI workflow sample at `docs/examples/eval-gate.yml` (copy to `.github/workflows/` when your token has `workflow` scope)
+**CI eval gate for agent traces: faithfulness, tool_success, and pii_leak — fail the build when quality slips.**
 
-## What it is not
-- Not a full Azure AI Foundry cloud evaluation suite (optional later)
-- Not a substitute for red-team / safety reviews
+> Who it's for: Teams putting AI apps behind CI and needing a boring, fixture-first quality gate.
 
-## Architecture
+## Why this exists
 
-```
-  fixtures/traces/*.json
-           |
-           v
-     eval-gate checks ----> reports/report.json
-           |                    reports/report.html
-           +--> exit 1 if any fail
-```
+Shipping agents without regression checks is how demos become incidents. `eval-gate` runs deterministic checks on JSON traces, writes HTML/JSON reports, and exits non-zero so GitHub Actions (or ADO) can block merges.
 
-## Quickstart
+## Install
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -e .
-python -m eval_gate.cli --fixtures fixtures/traces --out reports
-echo $?   # expect non-zero because fixtures include intentional failures
+```
+
+Or with pipx (once published to PyPI): `pipx install foundry-eval-gate` — until then use editable install from this repo.
+
+## 30-second demo
+
+```bash
+python -m eval_gate --help
+python -m eval_gate --fixtures fixtures/traces --out reports || true
 ls reports/
 ```
 
-## CI workflow note
-GitHub OAuth apps without the `workflow` scope cannot push `.github/workflows/*`. Copy:
+Or simply:
 
 ```bash
-mkdir -p .github/workflows
-cp docs/examples/eval-gate.yml .github/workflows/eval-gate.yml
-git add .github/workflows/eval-gate.yml && git commit -m "Add eval-gate workflow" && git push
+make demo
 ```
 
-## Demo assets checklist
-- [ ] `assets/demo.gif`
-- [ ] `assets/architecture.png`
-- [ ] `docs/DEMO.md`
+## What it is NOT
+
+- Not a full Azure AI Foundry cloud evaluation suite (optional later)
+- Not a substitute for red-team / safety reviews
+- Not an LLM judge by default (rules first, fixtures always)
+
+## Architecture
+
+![Architecture](assets/architecture.svg)
+
+## Roadmap
+
+- [ ] Wire optional Azure AI Foundry evaluators behind the same CLI
+- [ ] More check packs (latency budgets, schema drift)
+- [ ] Native `.github/workflows/` once token has workflow scope
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md). Be kind — [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md). Security reports: [SECURITY.md](./SECURITY.md).
 
 ## License
+
 MIT
