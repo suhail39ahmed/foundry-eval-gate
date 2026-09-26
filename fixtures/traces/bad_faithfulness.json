@@ -1,0 +1,12 @@
+{
+  "id": "trace-bad-faith-001",
+  "question": "What is the refund policy window?",
+  "answer": "Refunds are available for 365 days and include free shipping worldwide.",
+  "contexts": [
+    "Refund policy: Customers may request a refund within 30 days of purchase."
+  ],
+  "tool_calls": [
+    {"name": "search_docs", "success": true}
+  ],
+  "metadata": {"pii_expected": false}
+}

@@ -1,0 +1,18 @@
+[project]
+name = "foundry-eval-gate"
+version = "0.1.0"
+description = "CI eval gate: faithfulness, tool_success, pii_leak checks on traces"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+eval-gate = "eval_gate.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

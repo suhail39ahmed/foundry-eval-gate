@@ -1,0 +1,12 @@
+{
+  "id": "trace-good-001",
+  "question": "What is the refund policy window?",
+  "answer": "Customers can request a refund within 30 days of purchase according to the policy doc.",
+  "contexts": [
+    "Refund policy: Customers may request a refund within 30 days of purchase."
+  ],
+  "tool_calls": [
+    {"name": "search_docs", "success": true, "args": {"q": "refund policy"}}
+  ],
+  "metadata": {"pii_expected": false}
+}
