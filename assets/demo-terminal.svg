@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="214" viewBox="0 0 900 214">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f172a"/><stop offset="100%" stop-color="#020617"/></linearGradient></defs>
+  <rect width="900" height="214" rx="12" fill="url(#bg)"/>
+  <rect x="0" y="0" width="900" height="34" rx="12" fill="#1e293b"/><rect x="0" y="22" width="900" height="12" fill="#1e293b"/>
+  <circle cx="20" cy="16" r="5" fill="#f87171"/><circle cx="38" cy="16" r="5" fill="#fbbf24"/><circle cx="56" cy="16" r="5" fill="#4ade80"/>
+  <text x="450" y="20" text-anchor="middle" fill="#cbd5e1" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">foundry-eval-gate · offline fixtures · make demo</text>
+  <text x="18" y="52" fill="#7dd3fc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="600">$ make demo</text>
+  <text x="18" y="70" fill="#e2e8f0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="400">Wrote reports/report.json</text>
+  <text x="18" y="88" fill="#e2e8f0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="400">Wrote reports/report.html</text>
+  <text x="18" y="106" fill="#86efac" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="400">Summary: 1 passed, 2 failed  (intentional fixture fails)</text>
+  <text x="18" y="124" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="400">-----------------------------------------------</text>
+  <text x="18" y="142" fill="#e2e8f0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="400">Offline fixtures · faithfulness / tool_success / pii_leak</text>
+  <text x="18" y="160" fill="#86efac" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="400">✓ foundry-eval-gate demo OK</text>
+</svg>
